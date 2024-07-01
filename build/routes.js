@@ -5,6 +5,10 @@ var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
 var __copyProps = (to, from, except, desc) => {
   if (from && typeof from === "object" || typeof from === "function") {
     for (let key of __getOwnPropNames(from))
@@ -21,21 +25,18 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
-
-// src/index.ts
-var import_express2 = __toESM(require("express"));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // src/routes.ts
+var routes_exports = {};
+__export(routes_exports, {
+  default: () => routes_default
+});
+module.exports = __toCommonJS(routes_exports);
 var import_express = require("express");
 var import_path = __toESM(require("path"));
 var routes = (0, import_express.Router)();
 routes.get("/", (req, res) => {
-  return res.sendFile(import_path.default.join(__dirname, "../public", "app.html"));
+  return res.sendFile(import_path.default.join(__dirname + "public/index.html"));
 });
 var routes_default = routes;
-
-// src/index.ts
-var app = (0, import_express2.default)();
-app.use(routes_default);
-app.listen(process.env.port || 3e3);
-console.log("Server On");

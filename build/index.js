@@ -30,7 +30,7 @@ var import_express = require("express");
 var import_path = __toESM(require("path"));
 var routes = (0, import_express.Router)();
 routes.get("/", (req, res) => {
-  return res.sendFile(import_path.default.join(__dirname, "../public", "app.html"));
+  return res.sendFile(import_path.default.join(__dirname + "public/index.html"));
 });
 var routes_default = routes;
 
