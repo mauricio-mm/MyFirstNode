@@ -4,7 +4,9 @@
   "description": "My first project NodeJS and TypeScript",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "npm run tsx-watch && npm run tailwind",
+    "tailwind": "npx tailwindcss -i ./src/css/app.css -o ./public/css/app.css --watch",
+    "tsx-watch": "tsx watch src/index.ts",
     "build": "tsup src",
     "test": "vitest"
   },
